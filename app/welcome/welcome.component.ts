@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListPicker } from "ui/list-picker";
+import {RouterExtensions} from "nativescript-angular/router";
 
 import { AppService } from '../app.service';
 
@@ -16,7 +17,7 @@ export class WelcomeComponent implements OnInit {
   qoptions: any = [];
   qopt: Array<string> = [];
 
-  constructor(private service: AppService) { }
+  constructor(private service: AppService, private router: RouterExtensions) { }
 
   ngOnInit() { 
     this.loadQuestion();
@@ -44,6 +45,7 @@ export class WelcomeComponent implements OnInit {
     console.log("Item Tapped at cell index: " + args.index);
     let id = args.index + 1;
     console.log(id);
+    this.router.navigate(["/questions"]);
   }
 
 }

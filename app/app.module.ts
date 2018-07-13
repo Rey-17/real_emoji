@@ -17,6 +17,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { QuestionsComponent } from "~/questions/questions.component";
 
 @NgModule({
     bootstrap: [
@@ -34,7 +35,8 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
         ItemsComponent,
         ItemDetailComponent,
         LoginComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        QuestionsComponent
     ],
     providers: [
         ItemService,
