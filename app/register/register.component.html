@@ -1,4 +1,14 @@
+<ActionBar title="Registrarse en My Real Emoji" backgroundColor="yellow">
+    <NavigationButton text="Back to ActionBar"></NavigationButton>
+  </ActionBar>
+
 <StackLayout>
-  <Label class="h1 title"
-    text="register Is working"></Label>
+
+  <TextField hint="nombre" [(ngModel)]="nombre"></TextField> 
+  <TextField hint="Correo" keyboardType="email" [(ngModel)]="email"
+    autocorrect="true" autocapitalizationType="none"></TextField>
+  <TextField hint="Password" secure="true" [(ngModel)]="password"></TextField>
+
+  <Button text="Guardar" class="submit-button" (tap)="submit()"></Button>
+  <Button text="Cancelar" class="back-button" [nsRouterLink]="['/login']" ></Button>
 </StackLayout>

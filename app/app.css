@@ -48,4 +48,10 @@ Page {
     font-size: 12;
   }
 
+  .back-button{
+    background-color: red;
+    color:white;
+    font-size: 12;
+  }
+
     

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import {RouterExtensions} from "nativescript-angular/router";
 import {Page} from "ui/page";
+import * as dialogs from "ui/dialogs";
 
 @Component({
   moduleId: module.id,
@@ -31,7 +32,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(["/welcome"]);
     },
   error => {
-    console.log(error);
+    console.log(error.error.message);
+    dialogs.alert(error.error.message).then(()=> {
+      console.log("Dialog closed!");
+  });
   })
     
   }
