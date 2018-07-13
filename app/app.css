@@ -42,4 +42,10 @@ Page {
     font-weight: 700;
   }
 
+  .register-button {
+    background-color: orange;
+    color: white;
+    font-size: 12;
+  }
+
     

@@ -10,6 +10,7 @@ import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { RegisterComponent } from './register/register.component';
 
 import { AppService } from "~/app.service";
 
@@ -40,7 +41,8 @@ import { EndComponent } from './end/end.component';
         LoginComponent,
         WelcomeComponent,
         QuestionsComponent,
-        EndComponent
+        EndComponent,
+        RegisterComponent
     ],
     providers: [
         ItemService,

@@ -8,7 +8,7 @@ import { Questi } from './mock-questions';
   moduleId: module.id,
   selector: 'app-questions',
   templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.scss']
+  styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
   public id_w: string;
@@ -27,9 +27,7 @@ export class QuestionsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: RouterExtensions) {
     this.route.queryParams.subscribe(params => {
       this.id_w = params['id'];
-      this.op_w = params['option']
-      console.dir(this.id_w);
-      console.dir(this.op_w);
+      this.op_w = params['option'];
     })
   }
 

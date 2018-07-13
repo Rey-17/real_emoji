@@ -7,5 +7,6 @@
   <TextField hint="Password" secure="true" [(ngModel)]="password"></TextField>
 
   <Button text="Entrar" class="submit-button" (tap)="submit()">Entrar</Button>
+  <Button text="Registrarse" class="register-button" [nsRouterLink]="['/register']" >Registarse</Button>
 </StackLayout>
 
