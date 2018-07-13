@@ -1,7 +1,17 @@
-<ActionBar title="My Real Emoji">
+<ActionBar title="My Real Emoji" backgroundColor="yellow">
   <NavigationButton android.systemIcon="ic_menu_back" text="Back to ActionBar" (tap)="goBack()"></NavigationButton>
 </ActionBar>
 
 <StackLayout>
   <Label class="h3 p-15" [text]="q1" textWrap="true"></Label> 
+  
+  <ListView [items]="qopt" (itemTap)="onItemTap($event)" class="list-group">
+    <ng-template let-country="item" let-i="index" let-odd="odd" let-even="even">
+        <GridLayout [class.third]="third" class="list-group-item" [class.header]="header" [class.footer]="footer">
+            <Label [text]="country" android:class="label-item"></Label>
+        </GridLayout>
+    </ng-template>
+</ListView>
+
+
 </StackLayout>

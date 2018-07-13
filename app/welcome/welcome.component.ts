@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListPicker } from "ui/list-picker";
 
 import { AppService } from '../app.service';
 
@@ -11,7 +12,9 @@ import { AppService } from '../app.service';
 
 export class WelcomeComponent implements OnInit {
   applicationSettings = require("application-settings");
-  q1: string = 'test';
+  q1: string;
+  qoptions: any = [];
+  qopt: Array<string> = [];
 
   constructor(private service: AppService) { }
 
@@ -21,10 +24,26 @@ export class WelcomeComponent implements OnInit {
 
   loadQuestion() {
     this.service.getQuestionw().subscribe( res => {
-      console.dir(res);
+      this.q1 = res[0].pregunta;
+      this.qoptions = res[0].options_questions;
+      console.dir(this.qoptions);
+      this.createList();
     }, error => {
       console.dir(error);
     })
+  }
+
+  createList() {
+    for (let i = 0; i < this.qoptions.length; i++) {
+      this.qopt.push(this.qoptions[i].option);
+    }
+    console.dir(this.qopt);
+  }
+
+  public onItemTap(args) {
+    console.log("Item Tapped at cell index: " + args.index);
+    let id = args.index + 1;
+    console.log(id);
   }
 
 }

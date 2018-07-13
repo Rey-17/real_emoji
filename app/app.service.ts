@@ -29,7 +29,7 @@ export class AppService {
   // consultar el token desde el config
   private createRequestOptions() {
     let headers = new HttpHeaders({
-        "AuthToken": this.applicationSettings.getString('token'),
+        "Authorization": "Bearer " + this.applicationSettings.getString('token'),
         "Content-Type": "application/json"
     });
     return headers;
