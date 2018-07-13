@@ -1,4 +1,19 @@
+<ActionBar title="My Real Emoji" backgroundColor="yellow">
+  <NavigationButton text="Back to ActionBar"></NavigationButton>
+</ActionBar>
+
 <StackLayout>
-  <Label class="h1 title"
-    text="questions Is working"></Label>
+  <Label class="h3 p15"
+    text="Cuestionario"></Label>
+
+    <Label class="h3 p15" [text]="q_a" textWrap="true"></Label>
+
+    <ListView [items]="respuestas" (itemTap)="onItemTap($event)" class="list-group">
+      <ng-template let-num="item" let-i="index" let-odd="odd" let-even="even">
+          <GridLayout [class.third]="third" class="list-group-item" [class.header]="header" [class.footer]="footer">
+              <Label [text]="num" android:class="label-item"></Label>
+          </GridLayout>
+      </ng-template>
+  </ListView>
+
 </StackLayout>

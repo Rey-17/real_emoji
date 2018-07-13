@@ -3,6 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { RadioButtonModule } from 'nativescript-radiobutton/angular';
 
 import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
@@ -18,6 +19,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { QuestionsComponent } from "~/questions/questions.component";
+import { EndComponent } from './end/end.component';
 
 @NgModule({
     bootstrap: [
@@ -28,7 +30,8 @@ import { QuestionsComponent } from "~/questions/questions.component";
         AppRoutingModule,
         HttpClientModule,
         NativeScriptModule,
-        NativeScriptFormsModule
+        NativeScriptFormsModule,
+        //RadioButtonModule
     ],
     declarations: [
         AppComponent,
@@ -36,7 +39,8 @@ import { QuestionsComponent } from "~/questions/questions.component";
         ItemDetailComponent,
         LoginComponent,
         WelcomeComponent,
-        QuestionsComponent
+        QuestionsComponent,
+        EndComponent
     ],
     providers: [
         ItemService,

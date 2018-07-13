@@ -5,6 +5,7 @@ import { Routes } from "@angular/router";
 import { LoginComponent } from "~/login/login.component";
 import { WelcomeComponent } from "~/welcome/welcome.component";
 import { QuestionsComponent } from "~/questions/questions.component";
+import { EndComponent } from "~/end/end.component";
 
 const routes: Routes = [
     //{ path: "", redirectTo: "/items", pathMatch: "full" },
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'questions',
         component: QuestionsComponent
+    },
+    {
+        path: 'end',
+        component: EndComponent
     }
 ];
 

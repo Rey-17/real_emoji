@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListPicker } from "ui/list-picker";
 import {RouterExtensions} from "nativescript-angular/router";
+import { NavigationExtras } from '@angular/router';
 
 import { AppService } from '../app.service';
 
@@ -42,10 +43,15 @@ export class WelcomeComponent implements OnInit {
   }
 
   public onItemTap(args) {
-    console.log("Item Tapped at cell index: " + args.index);
     let id = args.index + 1;
-    console.log(id);
-    this.router.navigate(["/questions"]);
+    let op = this.qopt[args.index];
+    let extras: NavigationExtras = {
+      queryParams: {
+        'id' : id,
+        'option' : op
+      }
+    }
+    this.router.navigate(["/questions"], extras);
   }
 
 }
