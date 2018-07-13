@@ -1,0 +1,11 @@
+<StackLayout>
+  <Image src="~/images/logo6.png" stretch="aspectFit" horizontalAlignment="center"></Image>
+
+
+  <TextField hint="Email Address" keyboardType="email" [(ngModel)]="email"
+    autocorrect="true" autocapitalizationType="none"></TextField>
+  <TextField hint="Password" secure="true" [(ngModel)]="password"></TextField>
+
+  <Button text="Entrar" class="submit-button" (tap)="submit()">Entrar</Button>
+</StackLayout>
+
