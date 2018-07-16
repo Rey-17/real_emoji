@@ -17,7 +17,7 @@ export class QuestionsComponent implements OnInit {
 
   public q2: any[] = Questi;
   public data=[];
-  public respuestas = [1,2,3,4];
+  public respuestas = ['Nada de acuerdo.','Algo de acuerdo.', 'Bastante de acuerdo.', 'Muy de acuerdo', 'Totalmente de acuerdo.'];
 
   public index = 0;
   public q_a: any;   // pregunta
@@ -41,7 +41,7 @@ export class QuestionsComponent implements OnInit {
    }
 
   onItemTap(args) {
-    let res = args.index;
+    let res = +args.index + 1;
     this.data.push({id: this.q_ida, resp: res});
     console.dir(this.data);
     this.index ++;

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.applicationSettings.setString('token',res.data.api_token);
       console.dir(res);
       console.dir(this.applicationSettings.getString('token'));
-      this.router.navigate(["/welcome"]);
+      this.router.navigate(["/introduction"]);
     },
   error => {
     console.log(error.error.message);

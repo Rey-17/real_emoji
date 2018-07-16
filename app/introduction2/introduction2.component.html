@@ -1,0 +1,12 @@
+<ActionBar title="My Real Emoji" backgroundColor="yellow">
+    <NavigationButton text="Back to ActionBar"></NavigationButton>
+  </ActionBar>
+  
+  <StackLayout>
+  
+      <Label class="h2 p-15" text="Instrucciones"></Label>
+      <label class="p-12" [text]="text" textWrap="true"></label>
+      <label class="p-12" [text]="text2" textWrap="true"></label>
+  
+  <Button text="Iniciar" class="init-button" (tap)="continue()"></Button>
+  </StackLayout>

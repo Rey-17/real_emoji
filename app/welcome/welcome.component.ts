@@ -51,7 +51,7 @@ export class WelcomeComponent implements OnInit {
         'option' : op
       }
     }
-    this.router.navigate(["/questions"], extras);
+    this.router.navigate(["/introduction2"], extras);
   }
 
 }

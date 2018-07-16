@@ -21,6 +21,8 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { QuestionsComponent } from "~/questions/questions.component";
 import { EndComponent } from './end/end.component';
+import { IntroductionComponent } from "~/introduction/introduction.component";
+import { Introduction2Component } from "~/introduction2/introduction2.component";
 
 @NgModule({
     bootstrap: [
@@ -42,7 +44,9 @@ import { EndComponent } from './end/end.component';
         WelcomeComponent,
         QuestionsComponent,
         EndComponent,
-        RegisterComponent
+        RegisterComponent,
+        IntroductionComponent,
+        Introduction2Component
     ],
     providers: [
         ItemService,

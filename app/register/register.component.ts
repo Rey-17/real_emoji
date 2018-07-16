@@ -15,20 +15,24 @@ export class RegisterComponent implements OnInit {
   public email: String;
   public password: String;
 
+  applicationSettings = require("application-settings");
+
   constructor(private router: RouterExtensions, private service: AppService) {
   }
 
   ngOnInit() { }
 
   submit() {
-    const data = { nombre: this.nombre, email: this.email, password: this.password };
+    const data = { name: this.nombre, email: this.email, password: this.password, password_confirmation: this.password};
     console.log(this.email + ' ' + this.nombre + ' ' + this.password);
     this.service.register(data).subscribe(res => {
       console.dir(res);
+      this.applicationSettings.setString('token',res.data.api_token);
       dialogs.alert('Te has registrado satisfactoriamente.').then(() => {
-        console.log("Dialog closed!");
+        this.router.navigate(["/introduction"]);
       });
     }, error => {
+      console.dir(error);
       dialogs.alert(error.error.message).then(() => {
         console.log("Dialog closed!");
       });
