@@ -4,3 +4,7 @@ StackLayout {
     margin-right: 10;
     background-color: white;
   }
+
+  ListView {
+    margin-top: 20;
+  }
