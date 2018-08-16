@@ -9,6 +9,7 @@ import { EndComponent } from "~/end/end.component";
 import { RegisterComponent } from "~/register/register.component";
 import { IntroductionComponent } from "~/introduction/introduction.component";
 import { Introduction2Component } from "~/introduction2/introduction2.component";
+import { SorryComponent } from "~/sorry/sorry.component";
 
 const routes: Routes = [
     //{ path: "", redirectTo: "/items", pathMatch: "full" },
@@ -45,6 +46,10 @@ const routes: Routes = [
     {
         path: 'end',
         component: EndComponent
+    },
+    {
+        path: 'sorry',
+        component: SorryComponent
     }
 ];
 

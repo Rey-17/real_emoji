@@ -31,6 +31,11 @@ export class AppService {
     return this.http.post<any>(urlApi + 'register', data, {headers: options})
   }
 
+  saveData(data) {
+    let options = this.createRequestOptions();
+    return this.http.post<any>(urlApi + 'respuestas', data, {headers: options})
+  }
+
   // consultar el token desde el config
   private createRequestOptions() {
     let headers = new HttpHeaders({

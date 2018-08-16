@@ -23,6 +23,7 @@ import { QuestionsComponent } from "~/questions/questions.component";
 import { EndComponent } from './end/end.component';
 import { IntroductionComponent } from "~/introduction/introduction.component";
 import { Introduction2Component } from "~/introduction2/introduction2.component";
+import { SorryComponent } from "~/sorry/sorry.component";
 
 @NgModule({
     bootstrap: [
@@ -46,7 +47,8 @@ import { Introduction2Component } from "~/introduction2/introduction2.component"
         EndComponent,
         RegisterComponent,
         IntroductionComponent,
-        Introduction2Component
+        Introduction2Component,
+        SorryComponent
     ],
     providers: [
         ItemService,

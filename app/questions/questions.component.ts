@@ -40,14 +40,15 @@ export class QuestionsComponent implements OnInit {
    }
 
    loadQ() {
-     this.q_a = this.q2[this.index].q;
-     this.q_ida = this.q2[this.index].id;
+     if(this.index <= 23){
+      this.q_a = this.q2[this.index].q;
+      this.q_ida = this.q2[this.index].id;
+     }
    }
 
   onItemTap(args) {
     let res = +args.index + 1;
     this.data.push({id: this.q_ida, resp: res});
-    console.dir(this.data);
     if(this.q_ida <= 8){
       this.f_ae += res;
     }else if(this.q_ida > 8 && this.q_ida <= 16){
@@ -57,16 +58,17 @@ export class QuestionsComponent implements OnInit {
     }
     this.index ++;
 
-    if(this.index == 25){
+    if(this.index == 24){
     let extras: NavigationExtras = {
       queryParams: {
         atencion: this.f_ae,
         claridad: this.f_ce,
         reparacion: this.f_re,
-        data: this.data,
+        data: JSON.stringify(this.data),
         welcome: this.id_w
       }
     };
+    console.dir(this.data);
       this.router.navigate(["/end"], extras);
     }else{
       this.loadQ();

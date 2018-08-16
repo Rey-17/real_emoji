@@ -5,7 +5,17 @@
 <StackLayout>
 
     <Label class="h2 p-15" text="Introducción"></Label>
-    <label class="p-12" text="Ejemplo de introducción"></label>
+    <label class="p-12" text="Hola que tal, aquí descubriremos el Emoji real en ti." textWrap="true"></label>
+    <label class="p-12" text="Comencemos eligiendo tu género." textWrap="true"></label>
 
-<Button text="Iniciar" class="init-button" [nsRouterLink]="['/welcome']" textWrap="true"></Button>
+    <ListView [items]="generos" (itemTap)="onItemTap($event)" class="list-group">
+      <ng-template let-g="item" let-i="index" let-odd="odd" let-even="even">
+          <GridLayout [class.third]="third" class="list-group-item" [class.header]="header" [class.footer]="footer">
+              <Label [text]="g" android:class="label-item"></Label>
+          </GridLayout>
+      </ng-template>
+  </ListView>
+  <label class="p-15" *ngIf="gen" [text]="'Tu género es: ' + gen"></label>
+
+<Button *ngIf="gen" text="Iniciar" class="init-button" [nsRouterLink]="['/welcome']" textWrap="true"></Button>
 </StackLayout>
