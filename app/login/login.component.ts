@@ -16,8 +16,8 @@ var loader = new LoadingIndicator();
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  email: string ;//"antonios1789@gmail.com";
-  password: string; // "123456";
+  email: string ;//
+  password: string; // 
   data : any;
   applicationSettings = require("application-settings");
   public loading: boolean   = true;
